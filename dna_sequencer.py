@@ -9,6 +9,9 @@ gene_sequence0 = ""
 gene_sequence1 = ""
 
 x = 0
+
+# Generate the initial DNA base sequence.
+
 while x < num_genes: 
     random_gene = int(random.randint(1,4))
 
@@ -24,7 +27,7 @@ while x < num_genes:
     gene_sequence0 = gene_sequence0 + next_gene
     x += 1
 
-print(gene_sequence0)
+# Simulate transcription to generate the matching strand.
 
 for i in gene_sequence0: 
     if i == "A":
@@ -36,6 +39,8 @@ for i in gene_sequence0:
     else:
         gene_sequence1 = gene_sequence1 + "G"
 
+
+print(gene_sequence0)
 print(gene_sequence1)
 
 # TO-DO List 
