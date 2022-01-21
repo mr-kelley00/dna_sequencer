@@ -3,16 +3,20 @@
 
 import random 
 
-num_genes = int(input("How many random bases do you want to generate?\n"))
+num_base = int(input("How many random bases do you want to generate?\n"))
 next_gene = ""
-gene_sequence0 = ""
-gene_sequence1 = ""
+base_sequence0 = ""
+base_sequence1 = ""
 
 x = 0
+<<<<<<< Updated upstream
 
 # Generate the initial DNA base sequence.
 
 while x < num_genes: 
+=======
+while x < num_base: 
+>>>>>>> Stashed changes
     random_gene = int(random.randint(1,4))
 
     if random_gene == 1: 
@@ -24,24 +28,32 @@ while x < num_genes:
     else: 
         next_gene = "C"
 
-    gene_sequence0 = gene_sequence0 + next_gene
+    base_sequence0 = base_sequence0 + next_gene
     x += 1
 
+<<<<<<< Updated upstream
 # Simulate transcription to generate the matching strand.
+=======
+print(base_sequence0)
+>>>>>>> Stashed changes
 
-for i in gene_sequence0: 
-    if i == "A":
-        gene_sequence1 = gene_sequence1 + "T"
-    elif i == "T":
-        gene_sequence1 = gene_sequence1 + "A"
-    elif i == "G":
-        gene_sequence1 = gene_sequence1 + "C"
+for each_base in base_sequence0: 
+    if each_base == "A":
+        base_sequence1 = base_sequence1 + "T"
+    elif each_base == "T":
+        base_sequence1 = base_sequence1 + "A"
+    elif each_base == "G":
+        base_sequence1 = base_sequence1 + "C"
     else:
-        gene_sequence1 = gene_sequence1 + "G"
+        base_sequence1 = base_sequence1 + "G"
 
+<<<<<<< Updated upstream
 
 print(gene_sequence0)
 print(gene_sequence1)
+=======
+print(base_sequence1)
+>>>>>>> Stashed changes
 
 # TO-DO List 
 # Sequence Search:  Allow the user to type in a string of base pairs, iterate through the strings to see if that pattern exists in the string. 
