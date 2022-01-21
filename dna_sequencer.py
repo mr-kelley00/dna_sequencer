@@ -3,16 +3,16 @@
 
 import random 
 
-num_bases = int(input("How many random bases do you want to generate?\n"))
+num_requested_bases = int(input("How many random bases do you want to generate?\n"))
 next_gene = ""
 base_sequence0 = ""
 base_sequence1 = ""
 
-x = 0
+num_created_bases = 0
 
 # Generate the initial DNA base sequence.
 
-while x < num_bases: 
+while num_created_bases < num_requested_bases: 
     random_gene = int(random.randint(1,4))
 
     if random_gene == 1: 
@@ -25,7 +25,7 @@ while x < num_bases:
         next_gene = "C"
 
     base_sequence0 = base_sequence0 + next_gene
-    x += 1
+    num_created_bases += 1
 
 # Simulate transcription to generate the matching strand.
 
@@ -41,7 +41,10 @@ for each_base in base_sequence0:
 
 
 print(base_sequence0)
+print(base_sequence0.find("TAC")) # Find the first codon to start transcription.  Returns the index of the start of the sub-string. -1 indicates no match. 
+print("\n")
 print(base_sequence1)
+print(base_sequence1.find("TAC")) # Find the first codon to start transcription.  Returns the index of the start of the sub-string. -1 indicates no match. 
 
 # TO-DO List 
 # Sequence Search:  Allow the user to type in a string of base pairs, iterate through the strings to see if that pattern exists in the string. 
