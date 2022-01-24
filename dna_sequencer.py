@@ -12,35 +12,42 @@ num_created_bases = 0
 
 # Generate the initial DNA base sequence.
 
-while num_created_bases < num_requested_bases: 
-    random_gene = int(random.randint(1,4))
+def gen_DNA_string(num_requested_bases):
+    while num_created_bases < num_requested_bases: 
+        random_gene = int(random.randint(1,4))
 
-    if random_gene == 1: 
-        next_gene = "A"
-    elif random_gene == 2:
-        next_gene = "G"
-    elif random_gene == 3: 
-        next_gene = "T"
-    else: 
-        next_gene = "C"
+        if random_gene == 1: 
+            next_gene = "A"
+        elif random_gene == 2:
+            next_gene = "G"
+        elif random_gene == 3: 
+            next_gene = "T"
+        else: 
+            next_gene = "C"
 
-    base_sequence0 = base_sequence0 + next_gene
-    num_created_bases += 1
+        base_sequence0 = base_sequence0 + next_gene
+        num_created_bases += 1
+
+        return base_sequence0
 
 # Simulate transcription to generate the matching strand.
 
-for each_base in base_sequence0: 
-    if each_base == "A":
-        base_sequence1 = base_sequence1 + "T"
-    elif each_base == "T":
-        base_sequence1 = base_sequence1 + "A"
-    elif each_base == "G":
-        base_sequence1 = base_sequence1 + "C"
-    else:
-        base_sequence1 = base_sequence1 + "G"
+def copy_DNA_string(base_sequence0):
+
+    for each_base in base_sequence0: 
+        if each_base == "A":
+            base_sequence1 = base_sequence1 + "T"
+        elif each_base == "T":
+            base_sequence1 = base_sequence1 + "A"
+        elif each_base == "G":
+            base_sequence1 = base_sequence1 + "C"
+        else:
+            base_sequence1 = base_sequence1 + "G"
+        
+        return base_sequence1
 
 
-print(base_sequence0)
+print(gen_DNA_string(num_requested_bases))
 print(base_sequence0.find("TAC")) # Find the first codon to start transcription.  Returns the index of the start of the sub-string. -1 indicates no match. 
 print("\n")
 print(base_sequence1)
