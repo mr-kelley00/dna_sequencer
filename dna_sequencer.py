@@ -2,7 +2,7 @@
 # This is a simulated DNA base-pair generator.  It will randomly generate a string of bases, then create the matching string. 
 
 import random 
-
+dna_bases = ['A', 'G', 'C', 'T']
 num_requested_bases = int(input("How many random bases do you want to generate?\n"))
 next_gene = ""
 base_sequence0 = ""
